@@ -3,12 +3,17 @@ mongoose.connect("mongodb://127.0.0.1:27017/tism");
 
 var schema = mongoose.Schema({
   Title: String,
-  Assigned:  String,
+  Assigned: String,
   When: Date,
-  Completed: Date,
+  DateOfCHore: Date,
+  CompletedDate: Date,
+  Completed: Boolean,
   DOW: String,
   NotCompleted: Boolean,
-  NumOfStars: Number 
+  NumOfStars: Number,
+  ParrentConfirmed: Boolean,
+  OriginalChoreID: String,
+  HasBeenCalculated: {type:Boolean,default:false}
 })
 schema.set("toJSON", {
   virtuals: true,
